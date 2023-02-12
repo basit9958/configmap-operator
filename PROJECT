@@ -1,0 +1,16 @@
+domain: github.com
+layout:
+- go.kubebuilder.io/v3
+projectName: configmap-operator
+repo: github.com/basit9958/configmap-operator
+resources:
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: github.com
+  group: demo
+  kind: DemoClusterConfigmap
+  path: github.com/basit9958/configmap-operator/api/v1alpha1
+  version: v1alpha1
+version: "3"

@@ -1,0 +1,27 @@
+# permissions for end users to view democlusterconfigmaps.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: democlusterconfigmap-viewer-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: configmap-operator
+    app.kubernetes.io/part-of: configmap-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: democlusterconfigmap-viewer-role
+rules:
+- apiGroups:
+  - demo.github.com
+  resources:
+  - democlusterconfigmaps
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - demo.github.com
+  resources:
+  - democlusterconfigmaps/status
+  verbs:
+  - get

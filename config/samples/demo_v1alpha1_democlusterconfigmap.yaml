@@ -1,0 +1,12 @@
+apiVersion: demo.github.com/v1alpha1
+kind: DemoClusterConfigmap
+metadata:
+  labels:
+    app.kubernetes.io/name: democlusterconfigmap
+    app.kubernetes.io/instance: democlusterconfigmap-sample
+    app.kubernetes.io/part-of: configmap-operator
+    app.kuberentes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: configmap-operator
+  name: democlusterconfigmap-sample
+spec:
+  # TODO(user): Add fields here
