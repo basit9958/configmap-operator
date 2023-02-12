@@ -40,7 +40,6 @@ func removeString(slice []string, s string) (result []string) {
 	return
 }
 
-// https://stackoverflow.com/a/67904962/10745226
 func isMapSubset(mapSet interface{}, mapSubset interface{}) bool {
 	mapSetValue := reflect.ValueOf(mapSet)
 	mapSubsetValue := reflect.ValueOf(mapSubset)

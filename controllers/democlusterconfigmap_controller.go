@@ -172,7 +172,7 @@ func (r *DemoClusterConfigmapReconciler) SetupWithManager(mgr ctrl.Manager) erro
 		Complete(r)
 }
 
-type NamespaceReconicler struct {
+type NamespaceReconciler struct {
 	client.Client
 	Scheme *runtime.Scheme
 	Log    logr.Logger
@@ -182,7 +182,7 @@ type NamespaceReconicler struct {
 //+kubebuilder:rbac:groups="",resources=namespaces,verbs=get;list;watch
 //+kubebuilder:rbac:groups="",resources=configmaps,verbs=get;list;watch;create;update;patch;delete
 
-func (r *NamespaceReconicler) Reconcile(ctx context.Context, req ctrl.Request) (ctrl.Result, error) {
+func (r *NamespaceReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ctrl.Result, error) {
 	log := r.Log.WithValues("Namespace", req.NamespacedName)
 
 	// Fetch required Namespace according to the req.
@@ -226,7 +226,7 @@ func (r *NamespaceReconicler) Reconcile(ctx context.Context, req ctrl.Request) (
 }
 
 // SetupWithManager sets up the controller with the Manager.
-func (r *NamespaceReconicler) SetupWithManager(mgr ctrl.Manager) error {
+func (r *NamespaceReconciler) SetupWithManager(mgr ctrl.Manager) error {
 	log := r.Log
 	namespacePredicate := predicate.Funcs{
 		CreateFunc: func(ce event.CreateEvent) bool {
