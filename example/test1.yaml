@@ -1,0 +1,13 @@
+apiVersion: github.com/v1alpha1
+kind: DemoClusterConfigmap
+metadata:
+  name: app-info
+spec:
+  data:
+    environment: "demo"
+    region: "us-west-1"
+    domain: "dev1.example.com"
+  generateTo:
+    namespaceSelectors:
+      matchLabels:
+        managed: "dev1"
